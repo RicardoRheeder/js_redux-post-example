@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+import Posts from './components/Posts'
+import Postform from './components/Postform'
+
+import store from './store'
 
 class App extends Component {
-
   render() {
     return (
-      <h1>HELLO WORLD - Because anything else is pointless !!!</h1>
+      <Provider store = {store}>
+        <div>
+          <Postform/>
+          <hr/>
+          <Posts/>
+        </div>
+      </Provider>
+     
+
     )
   }
 }
